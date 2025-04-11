@@ -1,0 +1,83 @@
+services:
+  # private llm 
+  ollama:
+    container_name: ollama 
+    build:
+      context: ./ollama
+      dockerfile: Dockerfile    
+    pull_policy: always    
+    tty: true
+    restart: unless-stopped
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama:/var/lib/ollama
+    healthcheck:
+      test: ollama list || exit 1
+      interval: 10s
+      timeout: 30s
+      retries: 5
+      start_period: 10s
+    networks:
+      - lazer-net  
+    profiles:
+      - ""
+      - ollama-cpu
+      - ollama-cuda
+      - ollama-api
+
+  privategpt-svc:
+    container_name: privategpt-svc
+    build:
+      context: .
+      dockerfile: Dockerfile.services
+      target: production
+      args:
+        - PORT=3000
+        - PACKAGE_NAME=privategpt-svc
+    # command: pnpm start
+    env_file:
+      - ./packages/privategpt-svc/.env  
+    ports:
+      - "3000:3000" # internal http port when this service is behind nginx 
+    networks:
+      - lazer-net          
+    volumes:
+      - ./packages/privategpt-svc:/app/packages/privategpt-svc
+      - pgpt-svc-nm:/app/packages/privategpt-svc/node_modules                
+
+  nginx:
+    container_name: nginx
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile    
+    restart: always
+    depends_on:
+      - privategpt-svc
+    ports:
+      - "80:80"
+      - "443:443"      
+    networks:
+      - lazer-net      
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/ssl:/etc/nginx/ssl
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes: 
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    command: certonly --webroot -w /var/www/certbot --force-renewal --email amartin@lazertec.io -d lazertec.io --agree-tos      
+
+
+volumes:
+  pgpt-svc-nm: 
+  ollama: {}
+
+networks:
+  lazer-net:
+    external: true

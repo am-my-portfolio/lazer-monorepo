@@ -1,0 +1,16 @@
+[functions]
+  directory = "functions"
+
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 200
+  
+# [[redirects]]
+#   from = "https://172.174.36.205/*"
+#   to = "http://172.174.36.205/*"
+#   status = 200
+
+[dev]
+  command = "npm start"
+  port = 4001

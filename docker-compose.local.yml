@@ -1,0 +1,94 @@
+services:
+  # private llm 
+  ollama:
+    container_name: ollama 
+    build:
+      context: ./ollama
+      dockerfile: Dockerfile    
+    pull_policy: always    
+    tty: true
+    restart: unless-stopped
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama:/var/lib/ollama
+    healthcheck:
+      test: ollama list || exit 1
+      interval: 10s
+      timeout: 30s
+      retries: 5
+      start_period: 10s
+    profiles:
+      - ""
+      - ollama-cpu
+      - ollama-cuda
+      - ollama-api
+
+
+  # LAZER AI microservice (Nodejs, Typescript, Nestjs)
+  another-svc:
+    container_name: another-svc
+    build:
+      context: .
+      dockerfile: Dockerfile.services
+      target: build  # image size is 1 GB
+      args:
+        - PORT=3001
+        - PACKAGE_NAME=another-svc
+    command: pnpm --filter another-svc dev          
+    env_file:
+      - ./packages/another-svc/.env  
+    ports:
+      - "3001:3001"    
+    volumes:
+      - ./packages/another-svc:/app/packages/another-svc
+      - another-svc-nm:/app/packages/another-svc/node_modules       
+      # - main-nm:/app/node_modules  
+
+  privategpt-svc:
+    container_name: privategpt-svc
+    build:
+      context: .
+      dockerfile: Dockerfile.services
+      target: build # image size is over 1 GB 
+      args:
+        - PORT=3000
+        - PACKAGE_NAME=privategpt-svc
+    command: pnpm --filter privategpt-svc dev
+    env_file:
+      - ./packages/privategpt-svc/.env  
+    # depends_on:
+    #   - ollama        
+    ports:
+      - "3000:3000"    
+    volumes:
+      - ./packages/privategpt-svc:/app/packages/privategpt-svc
+      - pgpt-svc-nm:/app/packages/privategpt-svc/node_modules 
+    #   - main-nm:/app/node_modules     
+
+
+  security-hub: 
+    container_name: security-hub
+    build:
+      context: ./packages/security-hub
+      dockerfile: Dockerfile
+      args:
+        - PORT=4001
+        - PACKAGE_NAME=security-hub
+    command: npm run dev 
+    env_file:
+      - ./packages/security-hub/.env   
+    depends_on:
+      - privategpt-svc          
+    ports:
+      - "4001:4001"    
+    volumes:
+      - ./packages/security-hub:/app
+      - sh-nm:/app/node_modules    # ensures that the node_modules directory inside the container is synced with the host machine  
+
+volumes:
+  main-nm:
+  sh-nm:
+  pgpt-svc-nm: 
+  another-svc-nm:  
+  ollama: {}

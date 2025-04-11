@@ -1,0 +1,28 @@
+ [core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+	hooksPath = .husky/_
+[branch "main"]
+	remote = gt
+	merge = refs/heads/main
+
+[remote "az"]
+	url = git@ssh.dev.azure.com:v3/lazer-tec/lazer-monorepo/lazer-monorepo
+	fetch = +refs/heads/*:refs/remotes/azure-devops/*
+
+[remote "gt"]
+	url = git@github.com:LAZER-io/monorepo.git
+	fetch = +refs/heads/*:refs/remotes/github/*
+
+[remote "all"]
+	url = git@github.com:LAZER-io/monorepo.git
+	url = git@ssh.dev.azure.com:v3/lazer-tec/lazer-monorepo/lazer-monorepo
+	
+[pull]
+	ff = only
+[advice]
+	useCoreFsMonitorCOnfig = false

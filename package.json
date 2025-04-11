@@ -1,0 +1,59 @@
+{
+  "name": "lazerio",
+  "author": "",
+  "description": "",
+  "type": "module",
+  "version": "1.0.0",
+  "engines": {
+    "node": "^23.7.0",
+    "pnpm": "^10.0.0"
+  },
+  "packageManager": "pnpm@10.0.0",
+  "keywords": [],
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "fresh:start": "rm -rf node_modules **/*/node_modules **/*/dist **/*/build pnpm-lock.json  && pnpm i",
+    "build": "pnpm run --parallel build",
+    "start": "pnpm run --parallel start",
+    "dev": "pnpm run --parallel dev",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "lint:fix": "pnpm lint --fix",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "prepare": "husky",
+    "compose:local": "docker compose -f docker-compose.local.yml up -d --build",
+    "compose:mac": "docker network create lazer-net && docker compose up",
+    "compose:prod": "sudo docker network create lazer-net && sudo docker compose up"
+  },
+  "dependencies": {
+    "tslib": "^2.8.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@eslint/js": "^9.14.0",
+    "eslint": "^9.14.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-vue": "^9.32.0",
+    "globals": "^15.11.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
+    "typescript-eslint": "^8.12.2",
+    "vue-eslint-parser": "^9.4.3"
+  },
+  "pnpm": {
+    "overrides": {
+      "@langchain/core": "0.3.0"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "**/*": "prettier --write --ignore-unknown"
+  }
+}
