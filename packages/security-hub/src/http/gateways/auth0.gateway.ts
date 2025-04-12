@@ -6,7 +6,7 @@ import {
   IAuth0Organization,
   IAuth0OrganizationResponse,
   IAuth0Connections,
-} from '@/helpers/types';
+} from '@/auth';
 import CONFIG from '@/helpers/config';
 import { getRoleId } from '@/helpers/utils';
 import { callExternalApi } from '@/http/external-api.service';

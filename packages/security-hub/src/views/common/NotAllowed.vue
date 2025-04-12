@@ -1,22 +1,14 @@
 <template>
-  <main
-    v-if="isAuthenticated"
-    class="grid min-h-full place-items-center bg-primary px-6 py-24 sm:py-32 lg:px-8"
-  >
+  <main v-if="isAuthenticated" class="grid min-h-full place-items-center bg-primary px-6 py-24 sm:py-32 lg:px-8">
     <div class="text-center">
-      <h1
-        class="mt-5 text-3xl font-bold tracking-tight text-normal sm:text-5xl text-pop-secondary"
-      >
+      <h1 class="mt-5 text-3xl font-bold tracking-tight text-normal sm:text-5xl text-pop-secondary">
         Uh Oh
       </h1>
       <p class="mt-5 text-xl leading-7 text-normal text-pop-primary">
         You don't have access to this Page
       </p>
       <div class="mt-10 flex items-center justify-center gap-x-6">
-        <BaseButton
-          @click="logoutUser"
-          text="Login with the correct credentials"
-        />
+        <BaseButton @click="logoutUser" text="Login with the correct credentials" />
       </div>
     </div>
   </main>
@@ -26,8 +18,7 @@
 import { onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAuth0 } from '@auth0/auth0-vue';
-import { AllRoles } from '@/helpers/types';
-import { userHasAllRoles, userHasAnyRoles } from '@/auth/index';
+import { AllRoles, userHasAllRoles, userHasAnyRoles } from '@/auth';
 import BaseButton from "@/components/base/BaseButton.vue";
 
 const { isAuthenticated, logout } = useAuth0();

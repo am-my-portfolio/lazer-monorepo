@@ -1,4 +1,5 @@
-import { AllRoles, Item } from "../types";
+import { Item } from "@/helpers";
+import { AllRoles } from "@/auth"
 
 export const primary_navigation: Item[] = [
   {

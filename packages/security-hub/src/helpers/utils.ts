@@ -1,4 +1,4 @@
-import { RoleIds, AllRoles } from './types';
+import { RoleIds, AllRoles } from '@/auth';
 
 export const getRoleId = (role: AllRoles) => {
   console.debug(`[getRoleId]`);

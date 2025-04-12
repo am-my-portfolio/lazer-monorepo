@@ -1,4 +1,5 @@
-import { Item, AllRoles, NavType } from '@/helpers';
+import { AllRoles } from '@/auth';
+import { NavType } from '@/helpers';
 
 export const secondary_navigation = [
   {

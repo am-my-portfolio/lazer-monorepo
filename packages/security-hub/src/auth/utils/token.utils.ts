@@ -1,6 +1,6 @@
 import { jwtDecode, JwtPayload } from 'jwt-decode';
 import { useAuth0 } from '@auth0/auth0-vue';
-import { Permissions, AllRoles } from '@/helpers/index';
+import { Permissions, AllRoles } from '@/auth';
 
 export interface IDecodedAccessToken extends JwtPayload {
   roles: AllRoles[];
