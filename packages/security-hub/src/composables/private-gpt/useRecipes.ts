@@ -3,7 +3,7 @@ import { OpenAI } from '@langchain/openai';
 import { ChatAnthropic } from '@langchain/anthropic';
 import { loadSummarizationChain } from 'langchain/chains';
 import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter';
-import { callExternalApi } from '@/http/index';
+import { useExternalApi } from '@/composables/useExternalApi';
 
 import CONFIG from '@/helpers/config';
 import { base_url } from '@/helpers/constants';
@@ -40,7 +40,7 @@ export const useRecipes = () => {
         data: body,
       };
 
-      const { data, error } = await callExternalApi({ config });
+      const { data, error } = await useExternalApi({ config });
       console.log({ data, error });
       return data;
     }

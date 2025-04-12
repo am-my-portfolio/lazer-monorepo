@@ -1,5 +1,6 @@
-import { callExternalApi } from '@/http/index';
+
 import { base_url } from '@/helpers/constants';
+import { useExternalApi } from '@/composables/useExternalApi';
 
 export const useRag = async (prompt: string) => {
   const config = {
@@ -10,6 +11,6 @@ export const useRag = async (prompt: string) => {
     },
   };
 
-  const { data } = await callExternalApi({ config });
+  const { data } = await useExternalApi({ config });
   return data;
 };

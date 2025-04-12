@@ -9,7 +9,7 @@ import {
 } from '@/auth';
 import CONFIG from '@/helpers/config';
 import { getRoleId } from '@/helpers/utils';
-import { callExternalApi } from '@/http/external-api.service';
+import { useExternalApi } from '@/composables/useExternalApi';
 
 const { AUTH0_DOMAIN, AUTH0_CLIENT_ID, AUTH0_CLIENT_ID_MGNT_API, AUTH0_CLIENT_SECRET_MGNT_API } = CONFIG;
 
@@ -35,7 +35,7 @@ export class MgntRequests {
       data: body,
     };
 
-    const { data, error } = await callExternalApi({ config });
+    const { data, error } = await useExternalApi({ config });
     return data?.access_token;
   };
 }
@@ -122,7 +122,7 @@ export class UserRequests {
       },
     };
 
-    const { data, error } = await callExternalApi({ config });
+    const { data, error } = await useExternalApi({ config });
 
     return {
       data,
@@ -158,7 +158,7 @@ export class UserRequests {
       data: invitation_request,
     };
 
-    const { data, error } = await callExternalApi({ config });
+    const { data, error } = await useExternalApi({ config });
 
     return {
       data,
@@ -177,7 +177,7 @@ export class UserRequests {
       },
     };
 
-    const { data, error } = await callExternalApi({ config });
+    const { data, error } = await useExternalApi({ config });
 
     return {
       data,
@@ -195,7 +195,7 @@ export class UserRequests {
       },
     };
 
-    const { data, error } = await callExternalApi({ config });
+    const { data, error } = await useExternalApi({ config });
 
     return {
       data,
@@ -266,7 +266,7 @@ export class OrganizationRequests {
       data: body,
     };
 
-    const { data, error } = await callExternalApi({ config });
+    const { data, error } = await useExternalApi({ config });
 
     return {
       data: data as IAuth0OrganizationResponse,
@@ -297,7 +297,7 @@ export class OrganizationRequests {
       data: body,
     };
 
-    const { data, error } = await callExternalApi({ config });
+    const { data, error } = await useExternalApi({ config });
   };
 
   // https://auth0.com/docs/api/management/v2/organizations/post-organization-member-roles
@@ -328,6 +328,6 @@ export class OrganizationRequests {
       data: body,
     };
 
-    const { data, error } = await callExternalApi({ config });
+    const { data, error } = await useExternalApi({ config });
   };
 }

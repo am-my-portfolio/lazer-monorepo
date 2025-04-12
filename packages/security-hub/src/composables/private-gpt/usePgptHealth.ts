@@ -1,4 +1,4 @@
-import { callExternalApi } from '@/http/index';
+import { useExternalApi } from '@/composables/useExternalApi';
 import { base_url } from '@/helpers/constants';
 
 export const usePgptHealth = async () => {
@@ -10,7 +10,7 @@ export const usePgptHealth = async () => {
     },
   };
 
-  const { data, error } = await callExternalApi({ config });
+  const { data, error } = await useExternalApi({ config });
   console.log(data);
   return data;
 };

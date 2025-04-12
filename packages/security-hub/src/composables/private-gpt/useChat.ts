@@ -1,4 +1,4 @@
-import { callExternalApi } from '@/http/index';
+import { useExternalApi } from '@/composables/useExternalApi';
 import { base_url } from '@/helpers/constants';
 
 export const useChat = async (content: string, provider: 'ollama' | 'openai') => {
@@ -13,6 +13,6 @@ export const useChat = async (content: string, provider: 'ollama' | 'openai') =>
     },
   };
 
-  const { data } = await callExternalApi({ config });
+  const { data } = await useExternalApi({ config });
   return data;
 };

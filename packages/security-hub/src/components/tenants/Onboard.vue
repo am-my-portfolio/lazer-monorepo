@@ -162,7 +162,7 @@ import { ref } from 'vue';
 import Slider from '@vueform/slider';
 
 import PageDivisionLayout from '@/components/layout/PageDivisionLayout.vue';
-import { OrganizationRequests } from '@/http/gateways/auth0.gateway';
+import { OrganizationRequests } from '@/gateways/auth0.gateway';
 
 const team_size = ref([10, 50]);
 const success = ref(false);

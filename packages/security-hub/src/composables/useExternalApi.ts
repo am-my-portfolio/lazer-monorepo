@@ -1,6 +1,6 @@
 import axios, { AxiosRequestConfig } from 'axios';
 
-export const callExternalApi = async (options: { config: AxiosRequestConfig<unknown> }) => {
+export const useExternalApi = async (options: { config: AxiosRequestConfig<unknown> }) => {
   try {
     const response = await axios(options.config);
     const { data } = response;
