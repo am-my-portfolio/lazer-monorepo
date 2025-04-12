@@ -73,15 +73,15 @@ Powered by **LangChainJS** and **Ollama**, integrated into both frontend and bac
 
 ## 📦 Tech Stack
 
-| Layer       | Tech                                             |
-|-------------|--------------------------------------------------|
-| Monorepo    | PNPM Workspaces                                  |
-| Frontend    | Vue.js, Tailwind, FontAwesome, HeroIcons, PrimeVue |
-| Auth        | Auth0 (OIDC, RBAC, Organizations)                |
+| Layer       | Tech                                                |
+|-------------|-----------------------------------------------------|
+| Monorepo    | PNPM Workspaces                                     |
+| Frontend    | Vue.js, Tailwind, FontAwesome, HeroIcons, PrimeVue  |
+| Auth        | Auth0 (OIDC, RBAC, Organizations)                   |
 | Backend     | NestJS (Microservices), AuthGuards, Role Decorators |
-| AI          | LangChainJS, Ollama                              |
-| Proxy       | NGINX                                            |
-| Dev Tools   | Docker, ESLint, Prettier, Husky, Commitlint      |
+| AI          | LangChainJS, Ollama                                 |
+| Proxy       | NGINX                                               |
+| Dev Tools   | Docker, ESLint, Prettier, Husky, Commitlint         |
 
 ---
 
@@ -104,8 +104,9 @@ pnpm --filter @portfolio/frontend dev
 # Backend
 pnpm --filter @portfolio/backend start:dev
 
-# NGINX (Docker)
-docker-compose up nginx
+# Run whole stack via Docker Compose
+pnpm compose:local
+
 ```
 
 ---
@@ -144,7 +145,7 @@ MIT License
 
 
 
-## Prerequisites
+# Prerequisites
 
 - Docker and Docker Compose
   - [Installation Guide for Docker](https://docs.docker.com/get-started/get-docker/)
@@ -153,12 +154,6 @@ MIT License
 - Docker Resources
 
   - Go to Settings/Resources: Give 12 to 16 GB of RAM to
-
-
-# Run Locally
-- in the root of the folder `lazer-monorepo`, run commands:
-`pnpm i`
-`pnpm compose:local`
 
 
 # Demo
