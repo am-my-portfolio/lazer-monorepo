@@ -123,8 +123,8 @@ pnpm test
 
 | Folder        | Description                            |
 |---------------|----------------------------------------|
-| `apps/`       | Applications (frontend, backend, nginx)|
-| `packages/`   | Shared packages (UI, utils, types)     |
+| `packages/`   | Applications (frontend, backend, nginx)|
+| `libs/`       | Shared packages (UI, utils, types)     |
 | `.env`        | Environment variables                  |
 | `pnpm-workspace.yaml` | Workspace config               |
 
