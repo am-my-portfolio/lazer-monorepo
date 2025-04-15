@@ -135,14 +135,10 @@ pnpm test
 
 - AI analytics dashboard
 - Tenant-specific themes
+- Internationalization (I18N)
 - Admin portal for role/user/tenant management
 
 ---
-
-## 🤝 License
-
-MIT License
-
 
 
 # Prerequisites
