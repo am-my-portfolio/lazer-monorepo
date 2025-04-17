@@ -35,16 +35,16 @@ const socials = [
     href: 'https://www.linkedin.com/company/lazer-io',
     icon: 'fa-brands fa-linkedin',
   },
-  {
-    name: 'X',
-    href: 'https://x.com/XXXXX',
-    icon: 'fa-brands fa-twitter',
-  },
-  {
-    name: 'Instagram',
-    href: 'https://instagram.com/XXXXX',
-    icon: 'fa-brands fa-instagram',
-  },
+  // {
+  //   name: 'X',
+  //   href: 'https://x.com/XXXXX',
+  //   icon: 'fa-brands fa-twitter',
+  // },
+  // {
+  //   name: 'Instagram',
+  //   href: 'https://instagram.com/XXXXX',
+  //   icon: 'fa-brands fa-instagram',
+  // },
   // {
   //   name: "facebook",
   //   href: "https://discord.gg/XXXXXX",
