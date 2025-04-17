@@ -1,20 +1,20 @@
 <template>
-  <div class="mt-12 scroll-mt-12">
+  <div class="mt-36 scroll-mt-12">
     <ColumnLayout>
       <template #title>
-        Empowering Patients. Monetizing Data. Transforming Life Sciences.
+        Enterprise-Grade, Secure AI, With Built-in Privacy and Compliance
       </template>
 
       <template #subTitle> </template>
 
       <template #description>
-        SiloLabs bridges traditional and decentralized finance, creating a fair,
-        patient-first data economy leveraging blockchain technology so those in
-        need finally benefit from the data they create and own.
+        LAZER.IO is at the forefront of a new era in AI, dedicated to developing innovative, secure, and compliant
+        AI solutions for highly regulated industries. We understand the critical importance of trust and reliability
+        in AI deployments, so our models are designed with security and compliance at their core.
       </template>
 
       <template #leftContent>
-        <div class="flex flex-row items-left gap-4">
+        <div class="flex flex-row mt-12 items-left gap-4">
           <BaseButton @click="joinWaitlist" text="Join Waitlist" />
           <BaseButton @click="requestDemo" text="Request Demo" />
         </div>

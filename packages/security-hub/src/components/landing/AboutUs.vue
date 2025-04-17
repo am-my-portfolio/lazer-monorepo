@@ -4,19 +4,15 @@
       <template #titleLeft> About Us </template>
 
       <template #subTitleLeft>
-        SiloLabs is a secure health data marketplace that empowers individuals
-        to monetize their medical data while advancing scientific research.
+        Enterprise-Grade, Secure AI, With Built-in Privacy and Compliance
       </template>
 
       <template #content>
         <div class="-mt-10 text-lg">
           <p>
-            We believe your health data has value—and you deserve a share of it.
-            At SiloLabs, we’ve built a platform that lets patients upload,
-            manage, and sell their anonymized medical records to life sciences
-            companies and researchers. Using blockchain technology, we guarantee
-            data security, privacy, and transparent payments in Stablecoins like
-            USDC.​
+            LAZER.IO is at the forefront of a new era in AI, dedicated to developing innovative, secure, and compliant
+            AI solutions for highly regulated industries. We understand the critical importance of trust and reliability
+            in AI deployments, so our models are designed with security and compliance at their core.
           </p>
 
           <div class="mt-4">

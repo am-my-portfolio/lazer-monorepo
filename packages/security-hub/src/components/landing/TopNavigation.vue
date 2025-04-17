@@ -8,7 +8,7 @@
       <img
         src="/landing.png"
         alt="logo"
-        class="m-2 w-24 object-cover rounded dark:bg-white"
+        class="m-2 w-24 object-cover rounded"
       />
     </div>
 
