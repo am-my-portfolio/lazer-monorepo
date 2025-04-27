@@ -1,3 +1,8 @@
+
+<img width="1410" alt="Screenshot 2025-04-27 at 11 05 06 AM" src="https://github.com/user-attachments/assets/6a95a2ab-7378-422f-9751-9ed9952810a7" />
+
+
+
 # 🧩 Portfolio Monorepo
 
 A full-stack, multi-tenant SaaS portfolio project demonstrating secure user authentication, RBAC, microservice architecture, and AI-powered features, built using modern technologies.
