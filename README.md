@@ -1,6 +1,6 @@
 # 🧩 Portfolio Monorepo
 
-A full-stack, multi-tenant SaaS portfolio project demonstrating secure user authentication, RBAC, microservice architecture, and AI-powered features — all built using modern technologies.
+A full-stack, multi-tenant SaaS portfolio project demonstrating secure user authentication, RBAC, microservice architecture, and AI-powered features, built using modern technologies.
 
 ## 🏗️ Monorepo Overview
 
@@ -8,8 +8,8 @@ This monorepo uses **PNPM Workspaces** to manage multiple projects and shared de
 
 ```
 .
-├── nginx/              # NGINX reverse proxy
-├── ollama/             # Ollama to run LLMs locally
+├── nginx/              # NGINX for routing and reverse proxy
+├── ollama/             # Ollama for running LLMs locally
 ├── packages/
 │   ├── security-hub/   # Vue.js + Tailwind app
 │   ├── privategpt-svc/ # NestJS microservice for AI/LLM apps
