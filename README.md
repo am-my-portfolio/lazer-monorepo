@@ -54,9 +54,10 @@ Powered by **LangChainJS** and **Ollama**, integrated into both frontend and bac
 
 ---
 
-## 🔧 Backend (NestJS Microservices)
+## 🔧 Backend
 
 - **Architecture**: Microservices (each module as an isolated service)
+- **Framework**: NestJs
 - **RBAC & Guards**: Fine-grained access control per endpoint
 - **Multi-Tenancy**: Context-aware services using Auth0 Organization claims
 - **AI Service**: Dedicated service for AI tasks (chat, summarization, RAG)
