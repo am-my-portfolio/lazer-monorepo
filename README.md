@@ -23,17 +23,6 @@ This monorepo uses **PNPM Workspaces** to manage multiple projects and shared de
 
 ---
 
-## 📁 Project Structure
-
-| Folder        | Description                            |
-|---------------|----------------------------------------|
-| `packages/`   | Applications (frontend, backend)|
-| `libs/`       | Shared packages (UI, utils, types)     |
-| `.env`        | Environment variables                  |
-| `pnpm-workspace.yaml` | Workspace config               |
-
----
-
 
 ## 📦 Tech Stack
 
