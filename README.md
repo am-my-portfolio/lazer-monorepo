@@ -24,7 +24,7 @@ This monorepo uses **PNPM Workspaces** to manage multiple projects and shared de
 ---
 
 
-## 📦 Tech Stack
+## 📦 Tech Stack Summary
 
 | Layer       | Tech                                                |
 |-------------|-----------------------------------------------------|
