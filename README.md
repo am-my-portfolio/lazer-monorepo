@@ -23,6 +23,33 @@ This monorepo uses **PNPM Workspaces** to manage multiple projects and shared de
 
 ---
 
+## 📁 Project Structure
+
+| Folder        | Description                            |
+|---------------|----------------------------------------|
+| `packages/`   | Applications (frontend, backend)|
+| `libs/`       | Shared packages (UI, utils, types)     |
+| `.env`        | Environment variables                  |
+| `pnpm-workspace.yaml` | Workspace config               |
+
+---
+
+
+## 📦 Tech Stack
+
+| Layer       | Tech                                                |
+|-------------|-----------------------------------------------------|
+| Monorepo    | PNPM Workspaces                                     |
+| Frontend    | Vue.js, Tailwind, FontAwesome, HeroIcons, PrimeVue  |
+| Auth        | Auth0 (OIDC, RBAC, Organizations)                   |
+| Backend     | NestJS (Microservices), AuthGuards, Role Decorators |
+| AI          | LangChainJS, Ollama                                 |
+| Proxy       | NGINX                                               |
+| Dev Tools   | Docker, ESLint, Prettier, Husky, Commitlint         |
+
+---
+
+
 ## 🖥️ Frontend
 
 - **Framework**: Vue.js 3 (Composition API)
@@ -72,19 +99,6 @@ Powered by **LangChainJS** and **Ollama**, integrated into both frontend and bac
 
 ---
 
-## 📦 Tech Stack
-
-| Layer       | Tech                                                |
-|-------------|-----------------------------------------------------|
-| Monorepo    | PNPM Workspaces                                     |
-| Frontend    | Vue.js, Tailwind, FontAwesome, HeroIcons, PrimeVue  |
-| Auth        | Auth0 (OIDC, RBAC, Organizations)                   |
-| Backend     | NestJS (Microservices), AuthGuards, Role Decorators |
-| AI          | LangChainJS, Ollama                                 |
-| Proxy       | NGINX                                               |
-| Dev Tools   | Docker, ESLint, Prettier, Husky, Commitlint         |
-
----
 
 ## 🚀 Getting Started
 
@@ -121,16 +135,6 @@ pnpm test
 
 ---
 
-## 📁 Project Structure
-
-| Folder        | Description                            |
-|---------------|----------------------------------------|
-| `packages/`   | Applications (frontend, backend)|
-| `libs/`       | Shared packages (UI, utils, types)     |
-| `.env`        | Environment variables                  |
-| `pnpm-workspace.yaml` | Workspace config               |
-
----
 
 ## 📌 Future Enhancements
 
@@ -155,5 +159,5 @@ pnpm test
 
 # Demo
 
-- Local: http://localhost:4001
+- Local: `pnpm compose:local`
 - Web: https://lazer-security-hub.pages.dev/
